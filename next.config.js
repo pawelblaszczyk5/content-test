@@ -7,11 +7,6 @@ const plugin = createWebpackPlugin(() => ({
   name: "test",
   load(id) {
     if (id === "virtual-example") {
-      console.log(this);
-
-      console.log(this.addWatchFile("#/blog/test.mdx"));
-      console.log(this.addWatchFile("#/blog/test2.mdx"));
-
       return `
         export const posts = {
           test: () => import('#/blog/test.mdx'),
@@ -22,8 +17,6 @@ const plugin = createWebpackPlugin(() => ({
           test6: () => import('#/blog/test6.mdx'),
           test7: () => import('#/blog/test7.mdx'),
         }
-
-        export const bla = ${Math.random()}
       `;
     }
 

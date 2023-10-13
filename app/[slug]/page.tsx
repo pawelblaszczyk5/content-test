@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import { posts } from "virtual-example";
 
 export const dynamic = "force-dynamic";
-export const runtime = "edge";
 
 const BlogPage = async ({ params }) => {
   if (!posts[params.slug]) notFound();
